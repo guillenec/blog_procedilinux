@@ -1,0 +1,117 @@
+
+.caja_codigo{
+    @include caja_relative( 90%, 500px,100px auto 100px auto, 1000px );
+    background: $bg_code;
+    border-radius: 10px;
+    padding: 2px;
+
+    @include tablets(){
+        @include caja_relative( 90%, 700px,100px auto 100px auto);
+    }
+
+    .caja_base{
+        @include caja_relative( 100%, 100%, 0);
+        border-radius: 9px;
+        border: solid 2px $c_borde;
+        overflow: hidden;
+
+        .head_codes{
+            width: 100%;
+            height: 50px;
+            display: flex;
+
+            ul{
+                list-style: none;
+                display: flex;
+
+                &.botones{
+                    width: 120px;
+                    height: 100%;
+                    border-radius: 0 0 5px 0;
+                    border-bottom: solid 2px $c_borde;
+                    border-right: solid 2px $c_borde;
+                    background: $bg_caja_boton;
+                    align-content: center;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+
+                    li{
+                        width: 15px;
+                        height: 15px;
+                        background: #fff;
+                        border-radius: 50%;
+                        margin: 0;
+                        padding: 0;
+
+                        &.b_red{
+                            background:$boton_red;
+                            margin-left: 10px;
+                        }
+                        &.b_yell{
+                            background:$boton_yellow;
+                        }
+                        &.b_green{
+                            background: $boton_green;
+                        }
+                    }
+                }
+                &.code_ventana{
+                    width: 140px;
+                    height: 100%;
+                    display: flex;
+                    align-content: center;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: $c_cruz;
+                    padding: 0 10px 0 10px;
+                    font-size: 1.2em;
+                    
+                }
+                &.mas{
+                    @extend .code_ventana;
+                    width: calc(100% - 260px);
+                    border-radius: 0 0 0 5px;
+                    border-left: solid 2px $c_borde;
+                    border-bottom: solid 2px $c_borde;
+                    background: $bg_caja_boton;
+                    padding-left:5px ;
+                    padding-left: 10px;
+                }
+            }
+        }
+        .caja_codigo{
+            @include caja_relative( 100%, calc(100% - 50px), 0);
+            @include caja_flex();
+
+            @include tablets(){
+                @include caja_flex();
+            }
+
+            .codigo{
+                top: 0;
+                width: 58%;
+                height: 100%;
+                
+                @include tablets(){
+                    width: 100%;
+                    height: 42%;
+                }
+                
+            }
+            .salida{
+                top: 0;
+                width: 42%;
+                height: 100%;
+                border-left: solid 2px $c_borde;
+
+                @include tablets(){
+                    width: 100%;
+                    height: 42%;
+                    border-top: solid 2px $c_borde;
+                    border-left: none;
+                }
+            }
+        }
+    }
+}
